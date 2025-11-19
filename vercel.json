@@ -2,18 +2,14 @@
   "version": 2,
   "builds": [
     {
-      "src": "package.json",
-      "use": "@vercel/static-build",
-      "config": {
-        "distDir": "dist/public"
-      }
-    },
-    {
-      "src": "api/index.ts",
+      "src": "server/index.ts",
       "use": "@vercel/node"
     }
   ],
-  "installCommand": "pnpm install",
-  "buildCommand": "pnpm run build:vercel",
-  "outputDirectory": "dist/public"
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/server/index.ts"
+    }
+  ]
 }
