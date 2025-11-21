@@ -5,12 +5,8 @@
       "src": "package.json",
       "use": "@vercel/node",
       "config": {
-        "includeFiles": ["dist/public"]
+        "includeFiles": ["dist/public/**"]
       }
-    },
-    {
-      "src": "api/index.ts",
-      "use": "@vercel/node"
     }
   ],
   "routes": [
